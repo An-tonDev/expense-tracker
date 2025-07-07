@@ -1,0 +1,602 @@
+[
+  {
+    "id": "usr_1",
+    "name": "Adebayo Johnson",
+    "email": "adebayo@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Salary",
+        "type": "income",
+        "icon": "💰",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Food",
+        "type": "expense",
+        "icon": "🍔",
+        "color": "#FF5722"
+      }
+    ],
+    "createdAt": "2025-01-10T10:00:00Z"
+  },
+  {
+    "id": "usr_2",
+    "name": "Chioma Eze",
+    "email": "chioma@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Freelance",
+        "type": "income",
+        "icon": "💻",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚗",
+        "color": "#FFC107"
+      }
+    ],
+    "createdAt": "2025-02-15T10:00:00Z"
+  },
+  {
+    "id": "usr_3",
+    "name": "User 3",
+    "email": "user3@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-03-03T10:00:00Z"
+  },
+  {
+    "id": "usr_4",
+    "name": "User 4",
+    "email": "user4@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FFC107"
+      }
+    ],
+    "createdAt": "2025-04-04T10:00:00Z"
+  },
+  {
+    "id": "usr_5",
+    "name": "User 5",
+    "email": "user5@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-05-05T10:00:00Z"
+  },
+  {
+    "id": "usr_6",
+    "name": "User 6",
+    "email": "user6@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FFC107"
+      }
+    ],
+    "createdAt": "2025-06-06T10:00:00Z"
+  },
+  {
+    "id": "usr_7",
+    "name": "User 7",
+    "email": "user7@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-07-07T10:00:00Z"
+  },
+  {
+    "id": "usr_8",
+    "name": "User 8",
+    "email": "user8@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FFC107"
+      }
+    ],
+    "createdAt": "2025-08-08T10:00:00Z"
+  },
+  {
+    "id": "usr_9",
+    "name": "User 9",
+    "email": "user9@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-10-09T10:00:00Z"
+  },
+  {
+    "id": "usr_10",
+    "name": "User 10",
+    "email": "user10@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-11-10T10:00:00Z"
+  },
+  {
+    "id": "usr_11",
+    "name": "User 11",
+    "email": "user11@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-12-11T10:00:00Z"
+  },
+  {
+    "id": "usr_12",
+    "name": "User 12",
+    "email": "user12@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-01-12T10:00:00Z"
+  },
+  {
+    "id": "usr_13",
+    "name": "User 13",
+    "email": "user13@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-02-13T10:00:00Z"
+  },
+  {
+    "id": "usr_14",
+    "name": "User 14",
+    "email": "user14@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-03-14T10:00:00Z"
+  },
+  {
+    "id": "usr_15",
+    "name": "User 15",
+    "email": "user15@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-04-15T10:00:00Z"
+  },
+  {
+    "id": "usr_16",
+    "name": "User 16",
+    "email": "user16@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-05-16T10:00:00Z"
+  },
+  {
+    "id": "usr_17",
+    "name": "User 17",
+    "email": "user17@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-06-17T10:00:00Z"
+  },
+  {
+    "id": "usr_18",
+    "name": "User 18",
+    "email": "user18@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-07-18T10:00:00Z"
+  },
+  {
+    "id": "usr_19",
+    "name": "User 19",
+    "email": "user19@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-08-19T10:00:00Z"
+  },
+  {
+    "id": "usr_20",
+    "name": "User 20",
+    "email": "user20@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-09-20T10:00:00Z"
+  },
+  {
+    "id": "usr_21",
+    "name": "User 21",
+    "email": "user21@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-10-21T10:00:00Z"
+  },
+  {
+    "id": "usr_22",
+    "name": "User 22",
+    "email": "user22@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-11-22T10:00:00Z"
+  },
+  {
+    "id": "usr_23",
+    "name": "User 23",
+    "email": "user23@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-12-23T10:00:00Z"
+  },
+  {
+    "id": "usr_24",
+    "name": "User 24",
+    "email": "user24@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "$",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Side Hustle",
+        "type": "income",
+        "icon": "🛠️",
+        "color": "#2196F3"
+      },
+      {
+        "id": "cat_2",
+        "name": "Transport",
+        "type": "expense",
+        "icon": "🚕",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-01-24T10:00:00Z"
+  },
+  {
+    "id": "usr_25",
+    "name": "User 25",
+    "email": "user25@example.com",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.M3mU3Hq.V2kzKFHn4q9R3zY7JQ1Z/Wa",
+    "currency": "₦",
+    "categories": [
+      {
+        "id": "cat_1",
+        "name": "Job",
+        "type": "income",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "id": "cat_2",
+        "name": "Groceries",
+        "type": "expense",
+        "icon": "🛒",
+        "color": "#FF9800"
+      }
+    ],
+    "createdAt": "2025-02-25T10:00:00Z"
+  }
+]

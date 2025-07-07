@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile | Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="profile-page">
+
+  <header class="page-header">
+    <h1>Your Profile</h1>
+    <nav class="main-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/transactions.html">Transactions</a>
+      <span class="nav-active">Profile</span>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="profile-container">
+    <section class="profile-section">
+      <h2>Account Details</h2>
+      <div class="profile-details">
+        <p><strong>Name:</strong> <span id="user-name">Jane Doe</span></p>
+        <p><strong>Email:</strong> <span id="user-email">jane@example.com</span></p>
+        <p><strong>Member Since:</strong> <span id="join-date">Jan 2024</span></p>
+      </div>
+    </section>
+
+    <section class="profile-section">
+      <h2>Update Profile</h2>
+      <form class="profile-form" id="update-form">
+        <!-- Form fields -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="danger-zone">
+      <h2><i class="warning-icon">⚠️</i> Danger Zone</h2>
+      <form class="danger-form" id="delete-form">
+        <p>Permanently delete your account and all data</p>
+        <button type="submit" class="btn btn-danger">Delete Account</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>&copy; 2025 Expense Tracker</p>
+  </footer>
+</body>
+</html>

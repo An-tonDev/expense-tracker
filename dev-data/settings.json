@@ -1,0 +1,88 @@
+{
+  "app": {
+    "name": "Expense Tracker NG",
+    "version": "1.0.0",
+    "defaultCurrency": "₦",
+    "availableCurrencies": [
+      {
+        "code": "₦",
+        "name": "Naira",
+        "symbolPosition": "before",
+        "decimalDigits": 2
+      },
+      {
+        "code": "$",
+        "name": "US Dollar",
+        "symbolPosition": "before",
+        "decimalDigits": 2
+      },
+      {
+        "code": "€",
+        "name": "Euro",
+        "symbolPosition": "after",
+        "decimalDigits": 2
+      }
+    ]
+  },
+  "categories": {
+    "defaultIncomeCategories": [
+      {
+        "name": "Salary",
+        "icon": "💼",
+        "color": "#4CAF50"
+      },
+      {
+        "name": "Freelance",
+        "icon": "💻",
+        "color": "#2196F3"
+      }
+    ],
+    "defaultExpenseCategories": [
+      {
+        "name": "Food",
+        "icon": "🍔",
+        "color": "#FF5722"
+      },
+      {
+        "name": "Transport",
+        "icon": "🚗",
+        "color": "#FFC107"
+      },
+      {
+        "name": "Rent",
+        "icon": "🏠",
+        "color": "#9C27B0"
+      }
+    ]
+  },
+  "theme": {
+    "default": "light",
+    "options": {
+      "light": {
+        "primaryColor": "#2c7be5",
+        "secondaryColor": "#3f37c9",
+        "backgroundColor": "#ffffff",
+        "textColor": "#333333"
+      },
+      "dark": {
+        "primaryColor": "#3a56d4",
+        "secondaryColor": "#4895ef",
+        "backgroundColor": "#121212",
+        "textColor": "#f5f5f5"
+      }
+    }
+  },
+  "security": {
+    "passwordRequirements": {
+      "minLength": 8,
+      "requireNumbers": true,
+      "requireSpecialChars": true
+    },
+    "sessionTimeout": 30
+  },
+  "backup": {
+    "autoBackup": true,
+    "backupInterval": "daily",
+    "maxBackups": 7
+  }
+}
