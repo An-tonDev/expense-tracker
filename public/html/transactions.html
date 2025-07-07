@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction Management - Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="transactions-page">
+
+  <!-- Navigation -->
+  <header class="page-header">
+    <h1>Manage Transactions</h1>
+    <nav class="main-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <span class="nav-active">Transactions</span>
+      <a href="/profile.html">Profile</a>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Add New Transaction -->
+  <section class="transaction-form-section">
+    <h2 class="section-title">Add New Transaction</h2>
+    <form action="/transactions/add" method="POST" class="form-grid">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" required class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="amount">Amount (₦)</label>
+        <input type="number" id="amount" name="amount" step="0.01" required class="form-input">
+      </div>
+      
+      <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type" name="type" required class="form-select">
+          <option value="">-- Select Type --</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required class="form-input">
+      </div>
+      
+      <div class="form-actions">
+        <button type="reset" class="btn btn-secondary">Clear</button>
+        <button type="submit" class="btn btn-primary">Add Transaction</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Transaction Table -->
+  <section class="transaction-table-section">
+    <h2 class="section-title">Your Transactions</h2>
+    <div class="table-responsive">
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Amount (₦)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Normal Row -->
+          <tr>
+            <td>1</td>
+            <td>2025-06-27</td>
+            <td>Salary</td>
+            <td class="transaction-type income">Income</td>
+            <td class="amount-positive">₦100,000</td>
+            <td class="action-buttons">
+              <a href="#edit1" class="btn btn-sm btn-edit">Edit</a>
+              <form action="/transactions/delete/1" method="POST" class="inline-form">
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+          
+          <!-- Editable Row -->
+          <tr id="edit1" class="edit-form-row">
+            <td>1</td>
+            <td><input type="date" name="date" value="2025-06-27" required class="form-input-sm"></td>
+            <td><input type="text" name="description" value="Salary" required class="form-input-sm"></td>
+            <td>
+              <select name="type" required class="form-select-sm">
+                <option value="income" selected>Income</option>
+                <option value="expense">Expense</option>
+              </select>
+            </td>
+            <td><input type="number" name="amount" value="100000" required class="form-input-sm"></td>
+            <td class="action-buttons">
+              <button type="submit" form="edit-form-1" class="btn btn-sm btn-save">Save</button>
+              <a href="#" class="btn btn-sm btn-cancel">Cancel</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <p>&copy; 2025 Expense Tracker. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

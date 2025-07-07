@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction History | Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="history-page">
+
+  <header class="page-header">
+    <h1>Transaction History</h1>
+    <nav class="main-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <span class="nav-active">History</span>
+      <a href="/profile.html">Profile</a>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="history-container">
+    <!-- Enhanced Filter Section -->
+    <section class="filter-section">
+      <h2>View Transactions</h2>
+      <div class="filter-options">
+        <div class="time-range-tabs">
+          <button class="time-tab active" data-range="recent">Last 30 Days</button>
+          <button class="time-tab" data-range="month">By Month</button>
+          <button class="time-tab" data-range="year">By Year</button>
+        </div>
+
+        <div class="month-year-filters">
+          <div class="form-group">
+            <select id="month-select" class="form-select">
+              <option value="">All Months</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select id="year-select" class="form-select">
+              <option value="">All Years</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025" selected>2025</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="summary-section">
+      <div class="summary-cards">
+        <div class="summary-card income-card">
+          <h3>Total Income</h3>
+          <p class="amount-income">₦150,000</p>
+        </div>
+        <div class="summary-card expense-card">
+          <h3>Total Expenses</h3>
+          <p class="amount-expense">₦45,200</p>
+        </div>
+        <div class="summary-card balance-card">
+          <h3>Balance</h3>
+          <p class="balance-amount">₦104,800</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transactions Table (Default Recent) -->
+    <section class="transactions-section">
+      <div class="section-header">
+        <h2>Recent Transactions</h2>
+        <div class="view-options">
+          <span>Showing: Last 30 Days</span>
+        </div>
+      </div>
+
+      <div class="transaction-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-06-27</td>
+              <td>Salary Payment</td>
+              <td class="type-income">Income</td>
+              <td class="amount-income">₦100,000</td>
+            </tr>
+            <tr>
+              <td>2025-06-25</td>
+              <td>Office Supplies</td>
+              <td class="type-expense">Expense</td>
+              <td class="amount-expense">₦12,500</td>
+            </tr>
+            <tr>
+              <td>2025-06-24</td>
+              <td>Internet Bill</td>
+              <td class="type-expense">Expense</td>
+              <td class="amount-expense">₦3,000</td>
+            </tr>
+            <tr>
+              <td>2025-06-20</td>
+              <td>Freelance Project</td>
+              <td class="type-income">Income</td>
+              <td class="amount-income">₦50,000</td>
+            </tr>
+            <tr>
+              <td>2025-06-18</td>
+              <td>Team Lunch</td>
+              <td class="type-expense">Expense</td>
+              <td class="amount-expense">₦8,700</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Filtered Results Section (Hidden by default) -->
+    <section class="filtered-results" style="display:none;">
+      <div class="section-header">
+        <h2 id="results-title">Filtered Transactions</h2>
+        <button class="btn btn-sm" id="reset-filter">Reset Filter</button>
+      </div>
+      <div class="transaction-table">
+        <table>
+          <!-- Will be populated by JavaScript -->
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>&copy; 2025 Expense Tracker. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction History | Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="history-page">
+
+  <header class="page-header">
+    <h1>Transaction History</h1>
+    <nav class="main-nav">
+      <a href="/dashboard.html">Dashboard</a>
+      <span class="nav-active">History</span>
+      <a href="/profile.html">Profile</a>
+      <a href="/logout" class="logout-btn">Logout</a>
+    </nav>
+  </header>
+
+  <main class="history-container">
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <h2>View Transactions</h2>
+      <div class="filter-options">
+        <div class="time-range">
+          <label>
+            <input type="radio" name="time-range" value="recent" checked> 
+            Last 30 Days
+          </label>
+          <label>
+            <input type="radio" name="time-range" value="month"> 
+            Specific Month
+          </label>
+          <label>
+            <input type="radio" name="time-range" value="year"> 
+            Entire Year
+          </label>
+        </div>
+
+        <div class="month-year-filters" style="display:none;">
+          <select class="form-select" id="month">
+            <option value="">All Months</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+
+          <select class="form-select" id="year">
+            <option value="">All Years</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Transactions (Default View) -->
+    <section class="recent-transactions">
+      <h2>Recent Transactions</h2>
+      <div class="transaction-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-06-27</td>
+              <td>Salary</td>
+              <td class="type-income">Income</td>
+              <td class="amount-income">₦100,000</td>
+            </tr>
+            <tr>
+              <td>2025-06-25</td>
+              <td>Groceries</td>
+              <td class="type-expense">Expense</td>
+              <td class="amount-expense">₦12,500</td>
+            </tr>
+            <tr>
+              <td>2025-06-24</td>
+              <td>Data Subscription</td>
+              <td class="type-expense">Expense</td>
+              <td class="amount-expense">₦3,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Filtered Results (Hidden by default) -->
+    <section class="filtered-results" style="display:none;">
+      <h2>Filtered Results</h2>
+      <div class="transaction-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>&copy; 2025 Expense Tracker</p>
+  </footer>
+
+</body>
+</html>
