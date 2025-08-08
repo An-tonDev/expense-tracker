@@ -16,4 +16,4 @@ exports.getTransactions= async (req,res,next)=>{
 }
 exports.createTransaction= factory.createOne(Transaction)
 exports.updateTransaction= factory.updateOne(Transaction)
-exports.deleteTransaction= factory.deleteOne(Transaction)
+exports.updateTransaction= factory.deleteOne(Transaction)
