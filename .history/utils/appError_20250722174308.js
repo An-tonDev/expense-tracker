@@ -17,7 +17,7 @@ class NotFoundError extends AppError {
 class ValidationError extends AppError {
   constructor(errors) {
     super('Invalid input data', 400);
-    this.errors = errors; // For Mongoose validation details
+    this.errors = errors; // For Joi/Mongoose validation details
   }
 }
 
