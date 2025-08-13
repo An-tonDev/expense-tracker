@@ -7,10 +7,13 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "Dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "brcypt": "^1.0.1",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "helmet": "^8.1.0",

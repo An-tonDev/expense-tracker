@@ -1,0 +1,26 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "track expenses",
+  "license": "ISC",
+  "author": "antondev",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "Dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "brcypt": "^1.0.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
