@@ -83,10 +83,8 @@ exports.resetPassword= catchAsync( async(req,res,next)=>{
 
  user.password=req.body.password
  user.passwordConfirm=req.body.passwordConfirm
- user.passwordResetToken=undefined
- user.passwordResetExpires=undefined
-
- await user.save()
+ req.body.password=undefined
+ req.body.passwordConfirm=undefined
 
  createToken(user,200,res)
 })
