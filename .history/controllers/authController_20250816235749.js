@@ -24,7 +24,7 @@ const createToken= (user,statusCode,res)=>{
    res.status(statusCode).json({
      status:'success',
      token,
-     data:{user}
+     date:{user}
    })
 }
 

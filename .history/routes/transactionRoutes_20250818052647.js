@@ -4,8 +4,7 @@ const authController= require('../controllers/authController')
 
 
 const router=express.Router()
-router.use(authController.protect)
-
+router.use(authController.login)
 router
 .route('/')
 .get(transactionController.getTransactions)
@@ -14,7 +13,7 @@ router
 router
 .route('/:id')
 .get(transactionController.getTransaction)
-.patch(authController.restrictTo('users'),transactionController.updateTransaction)
-.delete(authController.restrictTo('users'),transactionController.deleteTransaction)
+.patch(transactionController.updateTransaction)
+.delete(transactionController.deleteTransaction)
 
 module.exports=router
