@@ -157,34 +157,6 @@ exports.getMonthlyReportData = catchAsync(async (req, res,next) => {
 });
 
 exports.transactionHistory = catchAsync(async (req,res,next) =>{
-    const {startDate,endDate}=req.query
-    const baseFilter= filter({user: req.user._id})
 
-    if(startDate || endDate)
-        baseFilter.date={}
-    if(startDate) baseFilter.date.$gte = new Date(startDate)
-    if(endDate) baseFilter.date.$lte=new Date(endDate)
-
-    const features= new APIFeatures(
-        Transaction.find(baseFilter),req.query
-    )
-    .filter()
-    .sort()
-    .limitFields()
-    
-    //cloning the query without pagination
-    const countQuery=features.query.clone()
-
-    features.query=features.query.paginate()
-     
-    features.query=features.query.populate('category','name icon color')
-    const {transactions,total} = await Promise.all([features.query,countQuery.countDocuments()])
-
-    res.json({
-        status:'success',
-        results: transactions.length,
-        total,
-        data:transactions
-    })
-
+    const {email,}=req.params
 })
