@@ -32,7 +32,7 @@ exports.sendMonthlyReport = catchAsync(async (req, res,next) => {
    return next(new AppError('email is required',400))
   }
 
-  //validate the emmail format
+  //validate the email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return next( new AppError('email format is invalid',400))
@@ -88,8 +88,8 @@ exports.sendMonthlyReport = catchAsync(async (req, res,next) => {
 
   await generatePDF(reportData, filePath);
 
-  // Send email
-  await sendReportEmail(
+  // Send email?
+  await sendEmail(
     email,
     `Your Monthly Financial Report - ${reportData.month}`,
     `Attached is your monthly financial report for ${reportData.month}.`,

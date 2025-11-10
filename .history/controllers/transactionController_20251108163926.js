@@ -1,10 +1,12 @@
 const Transaction=require('../models/transactionModel')
 const AppError=require('../utils/appError')
 const catchAsync=require('../utils/catchAsync')
+const APIFeatures=require('../utils/apiFeatures')
 const factory=require('./handlerFactory')
 const generatePDF=require('../utils/pdfGenerator')
 
 exports.getTransaction= factory.getOne(Transaction)
+
 exports.getTransactions= catchAsync(async (req,res,next)=>{
     const transactions= await Transaction.find()
     if(!transactions){
@@ -18,24 +20,22 @@ exports.getTransactions= catchAsync(async (req,res,next)=>{
 })
 
 exports.createTransaction= factory.createOne(Transaction)
+
 exports.updateTransaction= factory.updateOne(Transaction)
+
 exports.deleteTransaction= factory.deleteOne(Transaction)
-exports.sendMonthlyReport = catchAsync(async (req, res) => {
+
+exports.sendMonthlyReport = catchAsync(async (req, res,next) => {
   const { email, userId, month, year } = req.body;
 
   if (!email) {
-    return res.status(400).json({
-      status: "error",
-      message: "Email address is required"
-    });
+   return next(new AppError('email is required',400))
   }
 
+  //validate the email format
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    return res.status(400).json({
-      status: "error",
-      message: "Invalid email format"
-    });
+    return next( new AppError('email format is invalid',400))
   }
 
   // Date range
@@ -51,10 +51,7 @@ exports.sendMonthlyReport = catchAsync(async (req, res) => {
     : await User.findOne({ email });
 
   if (!user) {
-    return res.status(404).json({
-      status: "error",
-      message: "User not found"
-    });
+    return next ( new AppError("User not found",400))
   }
 
   // Transactions
@@ -91,8 +88,8 @@ exports.sendMonthlyReport = catchAsync(async (req, res) => {
 
   await generatePDF(reportData, filePath);
 
-  // Send email
-  await sendReportEmail(
+  // Send email?
+  await sendEmail(
     email,
     `Your Monthly Financial Report - ${reportData.month}`,
     `Attached is your monthly financial report for ${reportData.month}.`,
@@ -115,15 +112,12 @@ exports.sendMonthlyReport = catchAsync(async (req, res) => {
   });
 });
 
-exports.getMonthlyReportData = catchAsync(async (req, res) => {
+exports.getMonthlyReportData = catchAsync(async (req, res,next) => {
   const { userId, month, year } = req.params;
 
   const user = await User.findById(userId);
   if (!user) {
-    return res.status(404).json({
-      status: "error",
-      message: "User not found"
-    });
+   return next(new AppError('user not found',404))
   }
 
   const reportYear = parseInt(year) || new Date().getFullYear();
@@ -158,3 +152,90 @@ exports.getMonthlyReportData = catchAsync(async (req, res) => {
     }
   });
 });
+
+exports.transactionHistory = catchAsync(async (req,res,next) =>{
+    const {startDate,endDate}=req.query
+    const baseFilter= filter({user: req.user._id})
+
+    if(startDate || endDate)
+        baseFilter.date={}
+    if(startDate) baseFilter.date.$gte = new Date(startDate)
+    if(endDate) baseFilter.date.$lte=new Date(endDate)
+
+    const features= new APIFeatures(
+        Transaction.find(baseFilter),req.query
+    )
+    .filter()
+    .sort()
+    .limitFields()
+    
+    //cloning the query without pagination
+    const countQuery=features.query.clone()
+
+    features.query=features.query.paginate()
+     
+    features.query=features.query.populate('category','name icon color')
+    const {transactions,total} = await Promise.all([features.query,countQuery.countDocuments()])
+
+    res.json({
+        status:'success',
+        results: transactions.length,
+        total,
+        data:transactions
+    })
+
+})
+
+exports.getTransactionStats=catchAsync(async (req,res,next)=>{
+         const {startDate,endDate}=req.query
+         const matchStage={user:req.user._id}
+
+        if(startDate||endDate)
+            matchStage.date={}
+
+        if(startDate) matchStage.date.$gte=new Date(startDate)
+        if(endDate) matchStage.date.$lte=new Date(endDate)
+
+            const Stats= await Transaction.aggregate([
+                {$match:matchStage},
+                { 
+                        $group:{
+                        _id:'$type',
+                        totalAmount:{$sum:'$amount'},
+                        count:{$sum:1}
+                    }
+                },
+                {
+                    $group:{
+                        _id:null,
+                        income:{
+                            $sum:{ $cond: [ { $eq:['$_id','income'] } , '$totalAmount', 0 ] }
+                        },
+                        expenses:{
+                            $sum: {$cond : [ { $eq: ['$_id','expenses'] } , '$totalAmount', 0]}
+                        },
+                        totalTransactions: {$sum:'$count'}
+                    }
+                    
+                },
+                {
+                    $project:{
+                        _id:0,
+                        income:1,
+                        expenses:1,
+                        balance: {$subtract: ['$income','$expenses']},
+                        totalTransactions:1
+                    }
+                }
+            ])
+
+         if(!stats){
+            return next(new AppError('failed to fetch transaction stats',404))
+         }
+         
+    res.data.json({
+        status:'success',
+        data: stats[0] || {income:0,expenses:0,balance:0,totalTransactions:0}
+    })
+
+})

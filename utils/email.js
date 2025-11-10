@@ -11,7 +11,7 @@ class Email {
   // Create transporter (Mailtrap for development, real service for production)
   newTransport() {
     if (process.env.NODE_ENV === 'production') {
-      // Use SendGrid, Gmail, etc. for production
+      // Use SendGrid, Gmail, etc. for production..
       return nodemailer.createTransport({
         service: 'SendGrid',
         auth: {
@@ -31,7 +31,7 @@ class Email {
     });
   }
 
-  async send(template, subject) {
+  async sendEmail(template, subject) {
     const mailOptions = {
       from: this.from,
       to: this.to,

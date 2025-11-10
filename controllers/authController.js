@@ -57,7 +57,7 @@ exports.login = catchAsync( async (req,res,next)=>{
 })
 
 
-exports.logout= (req,res)=>{
+exports.logout= (res)=>{
     res.cookie('jwt','loggedout',{
         expiresIn: new Date(Date.now()+10*1000),
         httpOnly:true,
@@ -79,7 +79,7 @@ exports.resetPassword= catchAsync( async(req,res,next)=>{
  })
 
  if(!user){
-    return next(new AppError('this token is invalid oe expired',404))
+    return next(new AppError('this token is invalid or expired',404))
  }
 
  user.password=req.body.password
@@ -93,10 +93,13 @@ exports.resetPassword= catchAsync( async(req,res,next)=>{
 })
 
 exports.forgotPassword= catchAsync(async(req,res,next)=>{
+
     const user= await User.findOne({email:req.body.email})
+
     if(!user){
         return next(new AppError('no user with this email exists',404))
     }
+    
   const resetToken = user.createPasswordResetToken()
      await user.save({validateBeforeSave:false})
 
@@ -118,7 +121,7 @@ exports.forgotPassword= catchAsync(async(req,res,next)=>{
 })
 
 exports.restrictTo=(...roles)=>{
- return(req,res,next)=>{
+ return(req,next)=>{
     if(!roles.includes(req.user.role)){
         return next(new AppError('you do not have permission to access this file',403))
     }

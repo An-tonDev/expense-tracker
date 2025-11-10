@@ -57,7 +57,7 @@ exports.login = catchAsync( async (req,res,next)=>{
 })
 
 
-exports.logout= (req,res)=>{
+exports.logout= (res)=>{
     res.cookie('jwt','loggedout',{
         expiresIn: new Date(Date.now()+10*1000),
         httpOnly:true,
@@ -153,3 +153,39 @@ exports.protect=catchAsync(async (req,res,next)=>{
      res.locals.users=currentUser
 
 })
+
+exports.updatePassword =catchAsync( async (req, res, next) => {
+  
+    //Get user 
+    const user = await User.findById(req.user._id).select('+password');
+
+    if (!user) {
+      return next(new AppError('User not found', 404));
+    }
+
+    const isCurrentPasswordCorrect = await user.correctPassword(
+      req.body.currentPassword,
+      user.password
+    );
+
+    if (!isCurrentPasswordCorrect) {
+      return next(new AppError('Your current password is incorrect', 401));
+    }
+
+     //Validate new password
+    if (!req.body.newPassword || req.body.newPassword.length < 8) {
+      return next(new AppError('Password must be at least 8 characters', 400));
+    }
+
+    if (req.body.newPassword === req.body.currentPassword) {
+      return next(new AppError('New password must be different from current password', 400));
+    }
+
+    // Update password
+    user.password = req.body.newPassword;
+    user.passwordChangedAt = Date.now();
+    await user.save();
+
+    createToken(user,200,res);
+  } 
+);
