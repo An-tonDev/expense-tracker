@@ -4,7 +4,6 @@ const securityMiddleware= require('./utils/security')
 const ratelimiter=require('express-rate-limit')
 const xss=require('xss')
 const mongoSanitize=require('mongo-sanitize')
-const authRouter=require('./routes/authRoutes')
 const userRouter=require('./routes/userRoutes')
 const transactionRouter=require('./routes/transactionRoutes')
 const app=express()
@@ -27,7 +26,17 @@ const ratelimit=ratelimiter({
     }
 })
 
+const authlimit=ratelimiter({
+    windowMs:10*60*1000,
+    Max:8,
+    message:{
+        status:'fail',
+        mesaage:'to many requests from this IP'
+    }
+})
+
 app.use('/api',ratelimit)
+app.use('/api/auth',authlimit)
 
 app.use(xss())
 

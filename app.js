@@ -4,7 +4,6 @@ const securityMiddleware= require('./utils/security')
 const ratelimiter=require('express-rate-limit')
 const xss=require('xss')
 const mongoSanitize=require('mongo-sanitize')
-const authRouter=require('./routes/authRoutes')
 const userRouter=require('./routes/userRoutes')
 const transactionRouter=require('./routes/transactionRoutes')
 const app=express()
@@ -45,6 +44,5 @@ app.use(mongoSanitize())
 
 app.use('/api/v1/users',userRouter)
 app.use('/api/v1/transaction',transactionRouter)
-app.use('/api/auth',authRouter)
 
 module.exports=app

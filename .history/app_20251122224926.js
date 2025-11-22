@@ -26,7 +26,17 @@ const ratelimit=ratelimiter({
     }
 })
 
+const authlimit=ratelimiter({
+    windowMs:10*60*1000,
+    Max:8,
+    message:{
+        status:'fail',
+        mesaage:'to many requests from this IP'
+    }
+})
+
 app.use('/api',ratelimit)
+app.use('/api/auth',authlimit)
 
 app.use(xss())
 
